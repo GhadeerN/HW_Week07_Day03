@@ -45,6 +45,7 @@ class movieListFragment : Fragment() {
                 response: Response<List<MovieModel>>
             ) {
                 response.body()?.run {
+                    movies.clear()
                     movies.addAll(this)
                     movieAdapter.notifyDataSetChanged()
                 }
